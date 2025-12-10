@@ -69,7 +69,7 @@ Setelah download, simpan file .pt ke folder:
 
 models/
 
----md
+```md
 ## 🚦 5. Struktur Program
 
 Smart-Parking-YOLO/
@@ -85,8 +85,7 @@ Smart-Parking-YOLO/
 │── README.md
 │── requirements.txt
 └── .gitignore
-
-
+```
 ---
 ## ▶️ Cara Menjalankan Aplikasi
 
@@ -94,6 +93,7 @@ Setelah semua siap, jalankan UI aplikasi:
 streamlit run ui/app.py
 
 Aplikasi otomatis terbuka di browser.
+
 
 
 
