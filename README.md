@@ -1,4 +1,4 @@
-# 🌐 IoT Project - ESP32 MQTT (UTS Pemrograman IoT)
+# 🚗 Smart Parking System (YOLO + AI Detection)
 
 Halo semuaa 👋  
 Perkenalkan, saya **Achmad Bimo Rahadian (NRP: 152023029)**.  
@@ -41,3 +41,4 @@ CREATE TABLE IF NOT EXISTS `data_sensor` (
   `timestamp` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
+
