@@ -3,16 +3,13 @@
 Project ini adalah aplikasi Smart Parking berbasis Computer Vision menggunakan YOLOv8 untuk mendeteksi plat nomor, kendaraan, dan status slot parkir secara otomatis.
 Aplikasi ini bisa membantu sistem parkir modern dalam proses vehicle monitoring dan occupancy tracking secara real-time.
 
-👥 Anggota Kelompok E7
-152023029 - Achmad Bimo Rahadian
-152023071 - Chandra Kirana Irawan
-152023178 - Mesa Melinda
-152023181 - Syifa Luthfiyah
-152023216 - Tio Natanael Zagoto
+## 👥 Anggota Kelompok E7
 
-
-
-
+- 🧑‍💻 152023029 – Achmad Bimo Rahadian
+- 👨‍💻 152023071 – Chandra Kirana Irawan
+- 👩‍💻 152023178 – Mesa Melinda
+- 👩‍💻 152023181 – Syifa Luthfiyah
+- 🧑‍💻 152023216 – Tio Natanael Zagoto
 
 ---
 
@@ -72,13 +69,31 @@ Setelah download, simpan file .pt ke folder:
 
 models/
 
----
+---md
+## 🚦 5. Struktur Program
 
+Smart-Parking-YOLO/
+│── data/                 # dataset (tidak di-upload ke repo)
+│── models/               # YOLO model (.pt)
+│── src/
+│   ├── detect_and_recognize_plate.py
+│   ├── detect_vehicles.py
+│   ├── occupancy_manager.py
+│   └── utils.py
+│── ui/
+│   └── app.py            # main UI (Streamlit)
+│── README.md
+│── requirements.txt
+└── .gitignore
+
+
+---
 ## ▶️ Cara Menjalankan Aplikasi
 
 Setelah semua siap, jalankan UI aplikasi:
 streamlit run ui/app.py
 
 Aplikasi otomatis terbuka di browser.
+
 
 
