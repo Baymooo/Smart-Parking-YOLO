@@ -1,91 +1,43 @@
-🚗 Smart Parking System (YOLO + AI Detection)
+# 🌐 IoT Project - ESP32 MQTT (UTS Pemrograman IoT)
 
-Project ini adalah aplikasi Smart Parking berbasis Computer Vision menggunakan YOLOv8 untuk mendeteksi plat nomor, kendaraan, dan status slot parkir secara otomatis.
-Aplikasi ini bisa membantu sistem parkir modern dalam proses vehicle monitoring dan occupancy tracking secara real-time.
+Halo semuaa 👋  
+Perkenalkan, saya **Achmad Bimo Rahadian (NRP: 152023029)**.  
+Project ini saya kerjakan dalam rangka **UTS Mata Kuliah Pemrograman IoT**.
 
-👥 Anggota Kelompok
-
-Muhammad Lutfi Alamsyah – 152023059
-
-Achmad Bimo Rahadian – 152023029
-
-🛠️ Persiapan (Installation)
-
-Sebelum menjalankan aplikasi ini, pastikan laptop kalian sudah terinstall:
-
-Python
-
-VS Code
-
-Git (opsional, kalo mau clone repo)
-
-📥 1. Clone/Download Project
-
-Kalian bisa download project ini melalui tombol Code → Download ZIP atau clone pakai Git:
-
-git clone https://github.com/Baymooo/Smart-Parking-YOLO.git
+Project ini menghubungkan **ESP32** dengan **backend Python (Flask)** menggunakan protokol **MQTT**, serta menampilkan data sensor ke halaman web sederhana.
 
 
-Masuk ke folder project:
+---
 
-cd Smart-Parking-YOLO
+## 🧠 Deskripsi Singkat
 
-🧩 2. Buat Virtual Environment (Wajib)
+### 🛰️ ESP32
+- Mengambil data dari sensor **DHT11/DHT22** (suhu & kelembapan) dan sensor cahaya (**LDR**).
+- Mengirimkan data secara periodik ke **broker MQTT (`broker.hivemq.com`)**.
 
-Buka terminal di folder project, lalu jalankan:
+### ⚙️ Backend (Python)
+- Menggunakan **Flask** untuk membuat REST API.  
+- File `mqtt.py` berfungsi untuk **subscribe** dari broker MQTT dan menyimpan data ke database MySQL.
 
-Untuk Windows
-python -m venv venv
-.\venv\Scripts\activate
+### 💻 Frontend (Web)
+- File `index.html` menampilkan data sensor terbaru menggunakan **AJAX/fetch API** dari Flask backend.
 
-Untuk Mac/Linux
-python3 -m venv venv
-source venv/bin/activate
+---
 
-📦 3. Install Dependencies
+## 🗄️ Struktur Database
 
-Semua library sudah dirangkum di requirements.txt.
+Database: `iot_db`  
+Tabel: `data_sensor`
 
-Jalankan:
+```sql
+CREATE DATABASE IF NOT EXISTS `iot_db`;
+USE `iot_db`;
 
-pip install -r requirements.txt
-
-📊 4. Download Model YOLO (Wajib)
-
-Karena file YOLO besar, model tidak disimpan di GitHub.
-Silakan download model di sini:
-
-🔗 YOLO Plate Model:
-https://universe.roboflow.com/christine-ndtou/license-plate-detection-yolov8/dataset/1
-
-🔗 YOLO Vehicle Model:
-https://universe.roboflow.com/…
- (isi sesuai dataset mobil kalian)
-
-Setelah download, simpan file .pt ke folder:
-
-models/
-
-🚦 5. Struktur Program
-Smart-Parking-YOLO/
-│── data/                 # dataset (tidak di-upload ke repo)
-│── models/               # YOLO model (.pt)
-│── src/
-│   ├── detect_and_recognize_plate.py
-│   ├── detect_vehicles.py
-│   ├── occupancy_manager.py
-│   └── utils.py
-│── ui/
-│   └── app.py            # main UI (Streamlit)
-│── README.md
-│── requirements.txt
-└── .gitignore
-
-▶️ 6. Cara Menjalankan Aplikasi
-
-Setelah semua siap, jalankan UI aplikasi:
-
-streamlit run ui/app.py
-
-
-Aplikasi otomatis terbuka di browser.
+CREATE TABLE IF NOT EXISTS `data_sensor` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `suhu` float DEFAULT NULL,
+  `humidity` float DEFAULT NULL,
+  `lux` int DEFAULT NULL,
+  `timestamp` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
