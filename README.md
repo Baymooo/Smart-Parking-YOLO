@@ -20,6 +20,10 @@ Fitur Utama
 🅿️ Perhitungan slot parkir otomatis (occupied / empty)
 📊 Output ditampilkan dalam UI Streamlit
 🎥 Bisa dijalankan dari video atau kamera
+
+
+
+
 ---
 📥 1. Clone/Download Project
 Kalian bisa download project ini melalui tombol Code → Download ZIP atau clone pakai Git:
@@ -72,3 +76,4 @@ Setelah semua siap, jalankan UI aplikasi:
 streamlit run ui/app.py
 
 Aplikasi otomatis terbuka di browser.
+
