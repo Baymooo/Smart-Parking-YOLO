@@ -10,6 +10,10 @@ Aplikasi ini bisa membantu sistem parkir modern dalam proses vehicle monitoring 
 152023181 - Syifa Luthfiyah
 152023216 - Tio Natanael Zagoto
 
+
+
+
+
 ---
 
 ## 🧠 Deskripsi Singkat
@@ -76,4 +80,5 @@ Setelah semua siap, jalankan UI aplikasi:
 streamlit run ui/app.py
 
 Aplikasi otomatis terbuka di browser.
+
 
